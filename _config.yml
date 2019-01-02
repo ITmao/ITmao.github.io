@@ -78,6 +78,6 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:git
-  repo:https://github.com/ITmao/ITmao.github.io.git
-  branch:gh-pages
+  type: git
+  repo: https://github.com/ITmao/ITmao.github.io.git
+  branch: gh-pages
