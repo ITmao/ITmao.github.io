@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="itmao&#39;s blog">
 <meta property="og:description" content="open() 方法Python open() 方法用于打开一个文件，并返回文件对象，在对文件进行处理过程都需要使用到这个函数，如果该文件无法被打开，会抛出 OSError。 ==注意：使用 open() 方法一定要保证关闭文件对象，即调用 close() 方法。== open() 函数常用形式是接收两个参数：文件名(file)和模式(mode)。1open(file, mode=&amp;apos;r&amp;a">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-22T10:54:09.644Z">
+<meta property="og:updated_time" content="2019-07-22T11:01:15.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3-File文件方法">
 <meta name="twitter:description" content="open() 方法Python open() 方法用于打开一个文件，并返回文件对象，在对文件进行处理过程都需要使用到这个函数，如果该文件无法被打开，会抛出 OSError。 ==注意：使用 open() 方法一定要保证关闭文件对象，即调用 close() 方法。== open() 函数常用形式是接收两个参数：文件名(file)和模式(mode)。1open(file, mode=&amp;apos;r&amp;a">
@@ -332,7 +332,7 @@
                 
               
 
-              <time title="创建时间：2019-07-22 18:53:12 / 修改时间：18:54:09" itemprop="dateCreated datePublished" datetime="2019-07-22T18:53:12+08:00">2019-07-22</time>
+              <time title="创建时间：2019-07-22 18:53:12 / 修改时间：19:01:15" itemprop="dateCreated datePublished" datetime="2019-07-22T18:53:12+08:00">2019-07-22</time>
             
 
             
@@ -389,15 +389,11 @@
 <table>
 <thead>
 <tr>
-<th>header 1</th>
-<th>header 2</th>
+<th>模式</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>模式</td>
-<td>描述</td>
-</tr>
 <tr>
 <td>t</td>
 <td>文本模式 (默认)。</td>
@@ -469,7 +465,7 @@
 </tbody>
 </table>
 <p>默认为文本模式，如果要以二进制模式打开，加上<code>b</code>。</p>
-<h1 id="file-对象"><a href="#file-对象" class="headerlink" title="file 对象"></a>file 对象</h1><p>file 对象使用 open 函数来创建，下表列出了 file 对象常用的函数：<br>header 1 | header 2<br>—|—<br>序号|    方法及描述<br>1|    file.close()关闭文件。关闭后文件不能再进行读写操作。<br>2|    file.flush()刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件, 而不是被动的等待输出缓冲区写入。<br>3|    file.fileno()返回一个整型的文件描述符(file descriptor FD 整型), 可以用在如os模块的read方法等一些底层操作上。<br>4|    file.isatty()如果文件连接到一个终端设备返回 True，否则返回 False。<br>5|    file.next()==Python 3 中的 File 对象不支持 next()方法。== 返回文件下一行。<br>6|    file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。<br>7|    file.readline([size])读取整行，包括 “\n” 字符。<br>8|    file.readlines([sizeint])读取所有行并返回列表，若给定sizeint&gt;0，返回总和大约为sizeint字节的行, 实际读取值可能比 sizeint 较大, 因为需要填充缓冲区。<br>9|    file.seek(offset[, whence])设置文件当前位置<br>10|    file.tell()返回文件当前位置。<br>11|    file.truncate([size])从文件的首行首字符开始截断，截断文件为 size 个字符，无 size 表示从当前位置截断；截断之后后面的所有字符被删除，其中 Widnows 系统下的换行代表2个字符大小。<br>12|    file.write(str)将字符串写入文件，返回的是写入的字符长度。<br>13|    file.writelines(sequence)向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。</p>
+<h1 id="file-对象"><a href="#file-对象" class="headerlink" title="file 对象"></a>file 对象</h1><p>file 对象使用 open 函数来创建，下表列出了 file 对象常用的函数：<br>序号| 方法及描述<br>—|—<br>1|    file.close()关闭文件。关闭后文件不能再进行读写操作。<br>2|    file.flush()刷新文件内部缓冲，直接把内部缓冲区的数据立刻写入文件, 而不是被动的等待输出缓冲区写入。<br>3|    file.fileno()返回一个整型的文件描述符(file descriptor FD 整型), 可以用在如os模块的read方法等一些底层操作上。<br>4|    file.isatty()如果文件连接到一个终端设备返回 True，否则返回 False。<br>5|    file.next()==Python 3 中的 File 对象不支持 next()方法。== 返回文件下一行。<br>6|    file.read([size])从文件读取指定的字节数，如果未给定或为负则读取所有。<br>7|    file.readline([size])读取整行，包括 “\n” 字符。<br>8|    file.readlines([sizeint])读取所有行并返回列表，若给定sizeint&gt;0，返回总和大约为sizeint字节的行, 实际读取值可能比 sizeint 较大, 因为需要填充缓冲区。<br>9|    file.seek(offset[, whence])设置文件当前位置<br>10|    file.tell()返回文件当前位置。<br>11|    file.truncate([size])从文件的首行首字符开始截断，截断文件为 size 个字符，无 size 表示从当前位置截断；截断之后后面的所有字符被删除，其中 Widnows 系统下的换行代表2个字符大小。<br>12|    file.write(str)将字符串写入文件，返回的是写入的字符长度。<br>13|    file.writelines(sequence)向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。</p>
 
       
     </div>
