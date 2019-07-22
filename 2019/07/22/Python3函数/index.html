@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.7.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.7.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.7.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.7.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Python3函数函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。 函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。 定义一个函数你可以定义一个由自己想要功能的函数，以下是简单的规则：  函数代码块以def关键词开头，后接函数标识符名称和圆括号() 任何传入参数和自变量必须放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python3函数">
+<meta property="og:url" content="http://itmao.fun/2019/07/22/Python3函数/index.html">
+<meta property="og:site_name" content="itmao&#39;s blog">
+<meta property="og:description" content="Python3函数函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。 函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。 定义一个函数你可以定义一个由自己想要功能的函数，以下是简单的规则：  函数代码块以def关键词开头，后接函数标识符名称和圆括号() 任何传入参数和自变量必须放">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-22T08:50:35.828Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python3函数">
+<meta name="twitter:description" content="Python3函数函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。 函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。 定义一个函数你可以定义一个由自己想要功能的函数，以下是简单的规则：  函数代码块以def关键词开头，后接函数标识符名称和圆括号() 任何传入参数和自变量必须放">
+
+
+
+
+
+
+  <link rel="canonical" href="http://itmao.fun/2019/07/22/Python3函数/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python3函数 | itmao's blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">itmao's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://itmao.fun/2019/07/22/Python3函数/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="itmao">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="itmao's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python3函数
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-22 16:49:23 / 修改时间：16:50:35" itemprop="dateCreated datePublished" datetime="2019-07-22T16:49:23+08:00">2019-07-22</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Python3函数"><a href="#Python3函数" class="headerlink" title="Python3函数"></a>Python3函数</h1><p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。</p>
+<p>函数能提高应用的模块性，和代码的重复利用率。你已经知道Python提供了许多内建函数，比如print()。但你也可以自己创建函数，这被叫做用户自定义函数。</p>
+<h2 id="定义一个函数"><a href="#定义一个函数" class="headerlink" title="定义一个函数"></a>定义一个函数</h2><p>你可以定义一个由自己想要功能的函数，以下是简单的规则：</p>
+<ul>
+<li>函数代码块以<code>def</code>关键词开头，后接函数标识符名称和圆括号<code>()</code></li>
+<li>任何传入参数和自变量必须放在圆括号中间，圆括号自检可以用于定义参数。</li>
+<li>函数的第一行语句可以选择性的使用文档字符串-用户存放函数说明。</li>
+<li>函数内容以冒号起始，并且缩进。</li>
+<li><code>return[表达式]</code>结束函数，选择性地返回一个值给调用方。不带表达式的return相当于返回None。</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>Python 定义函数使用def关键字，一般格式如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">(参数列表)</span>:</span></span><br><span class="line">    函数体</span><br></pre></td></tr></table></figure></p>
+<p>默认情况下，参数值和参数名称是按函数声明中定义的顺序匹配起来的。</p>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><p>让我们使用函数来输出“Hello World！”：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    <span class="title">print</span><span class="params">(<span class="string">"Hello World!"</span>)</span></span></span><br><span class="line"><span class="function">&gt;&gt;&gt;<span class="title">hello</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="title">Hello</span> <span class="title">World</span>!</span></span><br><span class="line"><span class="function">&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>更复杂点的应用，函数中带上参数变量<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 计算面积函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">area</span><span class="params">(width, height)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> width * height</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_welcome</span><span class="params">(name)</span>:</span></span><br><span class="line">    print(<span class="string">"Welcome"</span>, name)</span><br><span class="line"> </span><br><span class="line">print_welcome(<span class="string">"Runoob"</span>)</span><br><span class="line">w = <span class="number">4</span></span><br><span class="line">h = <span class="number">5</span></span><br><span class="line">print(<span class="string">"width ="</span>, w, <span class="string">" height ="</span>, h, <span class="string">" area ="</span>, area(w, h))</span><br></pre></td></tr></table></figure></p>
+<p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Welcome Runoob</span><br><span class="line">width=4 height=5 area=20</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h2><p>定义一个函数：给了函数一个名称，制定了函数里包含的参数，和代码块结构。</p>
+<p>这个函数的基本结构完成以后，你可以通过另一个函数调用执行，也可以直接从Python命令提示符执行。</p>
+<p>如下实例调用了printme()函数：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printme</span><span class="params">( str )</span>:</span></span><br><span class="line">   <span class="comment"># 打印任何传入的字符串</span></span><br><span class="line">   <span class="keyword">print</span> (str)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 调用函数</span></span><br><span class="line">printme(<span class="string">"我要调用用户自定义函数!"</span>)</span><br><span class="line">printme(<span class="string">"再次调用同一函数"</span>)</span><br></pre></td></tr></table></figure></p>
+<p>以上实例输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">我要调用用户自定义函数!</span><br><span class="line">再次调用同一函数</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数传递"><a href="#函数传递" class="headerlink" title="函数传递"></a>函数传递</h2><p>在python中，类型属于对象，变量是没有类型的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3]</span><br><span class="line">a=&quot;Runoob&quot;</span><br></pre></td></tr></table></figure></p>
+<p><strong>==以上代码中，<code>[1,2,3]</code> 是 List 类型，”Runoob” 是 String 类型，而变量 a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是指向 List 类型对象，也可以是指向 String 类型对象。==</strong></p>
+<h3 id="可更改-mutable-与不可更改-immutable-对象"><a href="#可更改-mutable-与不可更改-immutable-对象" class="headerlink" title="可更改(mutable)与不可更改(immutable)对象"></a>可更改(mutable)与不可更改(immutable)对象</h3><p>在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。</p>
+<ul>
+<li><p>不可变类型：变量赋值 a=5 后再赋值 a=10，这里实际是新生成一个 int 值对象 10，再让 a 指向它，而 5 被丢弃，不是改变a的值，相当于新生成了a。</p>
+</li>
+<li><p>可变类型：变量赋值 la=[1,2,3,4] 后再赋值 la[2]=5 则是将 list la 的第三个元素值更改，本身la没有动，只是其内部的一部分值被修改了。</p>
+</li>
+</ul>
+<p>python 函数的参数传递：</p>
+<ul>
+<li>不可变类型：类似 c++ 的值传递，如 整数、字符串、元组。如fun（a），传递的只是a的值，没有影响a对象本身。比如在 fun（a）内部修改 a 的值，只是修改另一个复制的对象，不会影响 a 本身。</li>
+<li>可变类型：类似 c++ 的引用传递，如 列表，字典。如 fun（la），则是将 la 真正的传过去，修改后fun外部的la也会受影响</li>
+</ul>
+<p>python 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象。</p>
+<h3 id="python-传不可变对象实例"><a href="#python-传不可变对象实例" class="headerlink" title="python 传不可变对象实例"></a>python 传不可变对象实例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">def ChangeInt( a ):</span><br><span class="line">    a = 10</span><br><span class="line"> </span><br><span class="line">b = 2</span><br><span class="line">ChangeInt(b)</span><br><span class="line">print( b ) # 结果是 2</span><br></pre></td></tr></table></figure>
+<p>实例中有 int 对象 2，指向它的变量是 b，在传递给 ChangeInt 函数时，按传值的方式复制了变量 b，a 和 b 都指向了同一个 Int 对象，在 a=10 时，则新生成一个 int 值对象 10，并让 a 指向它。</p>
+<h3 id="传可变对象实例"><a href="#传可变对象实例" class="headerlink" title="传可变对象实例"></a>传可变对象实例</h3><p>可变对象在函数里修改了参数，那么在调用这个函数的函数里，原始的参数也被改变了。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line"># 可写函数说明</span><br><span class="line">def changeme( mylist ):</span><br><span class="line">   &quot;修改传入的列表&quot;</span><br><span class="line">   mylist.append([1,2,3,4])</span><br><span class="line">   print (&quot;函数内取值: &quot;, mylist)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line"># 调用changeme函数</span><br><span class="line">mylist = [10,20,30]</span><br><span class="line">changeme( mylist )</span><br><span class="line">print (&quot;函数外取值: &quot;, mylist)</span><br></pre></td></tr></table></figure></p>
+<p>传入函数的和在末尾添加新内容的对象用的是同一个引用。故输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数内取值:  [10, 20, 30, [1, 2, 3, 4]]</span><br><span class="line">函数外取值:  [10, 20, 30, [1, 2, 3, 4]]</span><br></pre></td></tr></table></figure>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p>以下是调用函数时可使用的正式参数类型：</p>
+<ul>
+<li>必需参数</li>
+<li>关键字参数</li>
+<li>默认参数</li>
+<li>不定长参数</li>
+</ul>
+<h3 id="必需参数"><a href="#必需参数" class="headerlink" title="必需参数"></a>必需参数</h3><p>必需参数须以正确的顺序传入函数。调用时的数量必须和声明时的一样。</p>
+<p>调用 printme() 函数，你必须传入一个参数，不然会出现语法错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">#可写函数说明</span><br><span class="line">def printme( str ):</span><br><span class="line">   &quot;打印任何传入的字符串&quot;</span><br><span class="line">   print (str)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line"># 调用 printme 函数，不加参数会报错</span><br><span class="line">printme()</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;test.py&quot;, line 10, in &lt;module&gt;</span><br><span class="line">    printme()</span><br><span class="line">TypeError: printme() missing 1 required positional argument: &apos;str&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="关键字参数"><a href="#关键字参数" class="headerlink" title="关键字参数"></a>关键字参数</h3><p>关键字参数和函数调用关系紧密，函数调用使用关键字参数来确定传入的参数值。</p>
+<p>使用关键字参数允许函数调用时参数的顺序与声明时不一致，因为 Python 解释器能够用参数名匹配参数值。</p>
+<p>以下实例在函数 printme() 调用时使用参数名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">#可写函数说明</span><br><span class="line">def printme( str ):</span><br><span class="line">   &quot;打印任何传入的字符串&quot;</span><br><span class="line">   print (str)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line">#调用printme函数</span><br><span class="line">printme( str = &quot;菜鸟教程&quot;)</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">菜鸟教程</span><br></pre></td></tr></table></figure>
+<p>以下实例中演示了函数参数的使用不需要使用指定顺序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">#可写函数说明</span><br><span class="line">def printinfo( name, age ):</span><br><span class="line">   &quot;打印任何传入的字符串&quot;</span><br><span class="line">   print (&quot;名字: &quot;, name)</span><br><span class="line">   print (&quot;年龄: &quot;, age)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line">#调用printinfo函数</span><br><span class="line">printinfo( age=50, name=&quot;runoob&quot; )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">名字:  runoob</span><br><span class="line">年龄:  50</span><br></pre></td></tr></table></figure>
+<h3 id="默认参数"><a href="#默认参数" class="headerlink" title="默认参数"></a>默认参数</h3><p>调用函数时，如果没有传递参数，则会使用默认参数。以下实例中如果没有传入 age 参数，则使用默认值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">#可写函数说明</span><br><span class="line">def printinfo( name, age = 35 ):</span><br><span class="line">   &quot;打印任何传入的字符串&quot;</span><br><span class="line">   print (&quot;名字: &quot;, name)</span><br><span class="line">   print (&quot;年龄: &quot;, age)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line">#调用printinfo函数</span><br><span class="line">printinfo( age=50, name=&quot;runoob&quot; )</span><br><span class="line">print (&quot;------------------------&quot;)</span><br><span class="line">printinfo( name=&quot;runoob&quot; )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">名字:  runoob</span><br><span class="line">年龄:  50</span><br><span class="line">------------------------</span><br><span class="line">名字:  runoob</span><br><span class="line">年龄:  35</span><br></pre></td></tr></table></figure>
+<h3 id="不定长参数"><a href="#不定长参数" class="headerlink" title="不定长参数"></a>不定长参数</h3><p>你可能需要一个函数能处理比当初声明时更多的参数。这些参数叫做不定长参数，和上述 2 种参数不同，声明时不会命名。基本语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def functionname([formal_args,] *var_args_tuple ):</span><br><span class="line">   &quot;函数_文档字符串&quot;</span><br><span class="line">   function_suite</span><br><span class="line">   return [expression]</span><br></pre></td></tr></table></figure>
+<p>加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line">  </span><br><span class="line"># 可写函数说明</span><br><span class="line">def printinfo( arg1, *vartuple ):</span><br><span class="line">   &quot;打印任何传入的参数&quot;</span><br><span class="line">   print (&quot;输出: &quot;)</span><br><span class="line">   print (arg1)</span><br><span class="line">   print (vartuple)</span><br><span class="line"> </span><br><span class="line"># 调用printinfo 函数</span><br><span class="line">printinfo( 70, 60, 50 )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输出: </span><br><span class="line">70</span><br><span class="line">(60, 50)</span><br></pre></td></tr></table></figure>
+<p>如果在函数调用时没有指定参数，它就是一个空元组。我们也可以不向函数传递未命名的变量。如下实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line"># 可写函数说明</span><br><span class="line">def printinfo( arg1, *vartuple ):</span><br><span class="line">   &quot;打印任何传入的参数&quot;</span><br><span class="line">   print (&quot;输出: &quot;)</span><br><span class="line">   print (arg1)</span><br><span class="line">   for var in vartuple:</span><br><span class="line">      print (var)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line"># 调用printinfo 函数</span><br><span class="line">printinfo( 10 )</span><br><span class="line">printinfo( 70, 60, 50 )</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输出:</span><br><span class="line">10</span><br><span class="line">输出:</span><br><span class="line">70</span><br><span class="line">60</span><br><span class="line">50</span><br></pre></td></tr></table></figure>
+<p>还有一种就是参数带两个星号 **基本语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def functionname([formal_args,] **var_args_dict ):</span><br><span class="line">   &quot;函数_文档字符串&quot;</span><br><span class="line">   function_suite</span><br><span class="line">   return [expression]</span><br></pre></td></tr></table></figure>
+<p>加了两个星号 ** 的参数会以字典的形式导入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line">  </span><br><span class="line"># 可写函数说明</span><br><span class="line">def printinfo( arg1, **vardict ):</span><br><span class="line">   &quot;打印任何传入的参数&quot;</span><br><span class="line">   print (&quot;输出: &quot;)</span><br><span class="line">   print (arg1)</span><br><span class="line">   print (vardict)</span><br><span class="line"> </span><br><span class="line"># 调用printinfo 函数</span><br><span class="line">printinfo(1, a=2,b=3)</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输出: </span><br><span class="line">1</span><br><span class="line">&#123;&apos;a&apos;: 2, &apos;b&apos;: 3&#125;</span><br></pre></td></tr></table></figure>
+<p>声明函数时，参数中星号 * 可以单独出现，例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def f(a,b,*,c):</span><br><span class="line">    return a+b+c</span><br></pre></td></tr></table></figure>
+<p>如果单独出现星号 * 后的参数必须用关键字传入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def f(a,b,*,c):</span><br><span class="line">...     return a+b+c</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; f(1,2,3)   # 报错</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: f() takes 2 positional arguments but 3 were given</span><br><span class="line">&gt;&gt;&gt; f(1,2,c=3) # 正常</span><br><span class="line">6</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h2><p>python 使用 lambda 来创建匿名函数。</p>
+<p>所谓匿名，意即不再使用 def 语句这样标准的形式定义一个函数。</p>
+<ul>
+<li>lambda 只是一个表达式，函数体比 def 简单很多。</li>
+<li>lambda的主体是一个表达式，而不是一个代码块。仅仅能在lambda表达式中封装有限的逻辑进去。</li>
+<li>lambda 函数拥有自己的命名空间，且不能访问自己参数列表之外或全局命名空间里的参数。</li>
+<li>虽然lambda函数看起来只能写一行，却不等同于C或C++的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。</li>
+</ul>
+<h3 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h3><p>lambda 函数的语法只包含一个语句，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lambda [arg1 [,arg2,.....argn]]:expression</span><br></pre></td></tr></table></figure></p>
+<p>如下实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line"># 可写函数说明</span><br><span class="line">sum = lambda arg1, arg2: arg1 + arg2</span><br><span class="line"> </span><br><span class="line"># 调用sum函数</span><br><span class="line">print (&quot;相加后的值为 : &quot;, sum( 10, 20 ))</span><br><span class="line">print (&quot;相加后的值为 : &quot;, sum( 20, 20 ))</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">相加后的值为 :  30</span><br><span class="line">相加后的值为 :  40</span><br></pre></td></tr></table></figure>
+<h2 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a>return语句</h2><p><code>return [表达式]</code> 语句用于退出函数，选择性地向调用方返回一个表达式。不带参数值的return语句返回None。之前的例子都没有示范如何返回数值，以下实例演示了 return 语句的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line"># 可写函数说明</span><br><span class="line">def sum( arg1, arg2 ):</span><br><span class="line">   # 返回2个参数的和.&quot;</span><br><span class="line">   total = arg1 + arg2</span><br><span class="line">   print (&quot;函数内 : &quot;, total)</span><br><span class="line">   return total</span><br><span class="line"> </span><br><span class="line"># 调用sum函数</span><br><span class="line">total = sum( 10, 20 )</span><br><span class="line">print (&quot;函数外 : &quot;, total)</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数内 :  30</span><br><span class="line">函数外 :  30</span><br></pre></td></tr></table></figure>
+<h2 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h2><p>Python 中，程序的变量并不是在哪个位置都可以访问的，访问权限决定于这个变量是在哪里赋值的。</p>
+<p>变量的作用域决定了在哪一部分程序可以访问哪个特定的变量名称。Python的作用域一共有4种，分别是：</p>
+<ul>
+<li>L （Local） 局部作用域</li>
+<li>E （Enclosing） 闭包函数外的函数中</li>
+<li>G （Global） 全局作用域</li>
+<li>B （Built-in） 内置作用域（内置函数所在模块的范围）</li>
+</ul>
+<p>以 L –&gt; E –&gt; G –&gt;B 的规则查找，即：在局部找不到，便会去局部外的局部找（例如闭包），再找不到就会去全局找，再者去内置中找。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">g_count = 0  # 全局作用域</span><br><span class="line">def outer():</span><br><span class="line">    o_count = 1  # 闭包函数外的函数中</span><br><span class="line">    def inner():</span><br><span class="line">        i_count = 2  # 局部作用域</span><br></pre></td></tr></table></figure></p>
+<p>内置作用域是通过一个名为 builtin 的标准模块来实现的，但是这个变量名自身并没有放入内置作用域内，所以必须导入这个文件才能够使用它。在Python3.0中，可以使用以下的代码来查看到底预定义了哪些变量:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import builtins</span><br><span class="line">&gt;&gt;&gt; dir(builtins)</span><br></pre></td></tr></table></figure>
+<p>Python 中只有模块（module），类（class）以及函数（def、lambda）才会引入新的作用域，其它的代码块（如 if/elif/else/、try/except、for/while等）是不会引入新的作用域的，也就是说这些语句内定义的变量，外部也可以访问，如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; if True:</span><br><span class="line">...  msg = &apos;I am from Runoob&apos;</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; msg</span><br><span class="line">&apos;I am from Runoob&apos;</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
+<p>实例中 msg 变量定义在 if 语句块中，但外部还是可以访问的。</p>
+<p>如果将 msg 定义在函数中，则它就是局部变量，外部不能访问：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def test():</span><br><span class="line">...     msg_inner = &apos;I am from Runoob&apos;</span><br><span class="line">... </span><br><span class="line">&gt;&gt;&gt; msg_inner</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">NameError: name &apos;msg_inner&apos; is not defined</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>从报错的信息上看，说明了 msg_inner 未定义，无法使用，因为它是局部变量，只有在函数内可以使用。</p>
+<h3 id="全局变量和局部变量"><a href="#全局变量和局部变量" class="headerlink" title="全局变量和局部变量"></a>全局变量和局部变量</h3><p>定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。</p>
+<p>局部变量只能在其被声明的函数内部访问，而全局变量可以在整个程序范围内访问。调用函数时，所有在函数内声明的变量名称都将被加入到作用域中。如下实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">total = 0 # 这是一个全局变量</span><br><span class="line"># 可写函数说明</span><br><span class="line">def sum( arg1, arg2 ):</span><br><span class="line">    #返回2个参数的和.&quot;</span><br><span class="line">    total = arg1 + arg2 # total在这里是局部变量.</span><br><span class="line">    print (&quot;函数内是局部变量 : &quot;, total)</span><br><span class="line">    return total</span><br><span class="line"> </span><br><span class="line">#调用sum函数</span><br><span class="line">sum( 10, 20 )</span><br><span class="line">print (&quot;函数外是全局变量 : &quot;, total)</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">函数内是局部变量 :  30</span><br><span class="line">函数外是全局变量 :  0</span><br></pre></td></tr></table></figure>
+<h3 id="global-和-nonlocal关键字"><a href="#global-和-nonlocal关键字" class="headerlink" title="global 和 nonlocal关键字"></a>global 和 nonlocal关键字</h3><p>当内部作用域想修改外部作用域的变量时，就要用到global和nonlocal关键字了。<br>以下实例修改全局变量 num：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">num = 1</span><br><span class="line">def fun1():</span><br><span class="line">    global num  # 需要使用 global 关键字声明</span><br><span class="line">    print(num) </span><br><span class="line">    num = 123</span><br><span class="line">    print(num)</span><br><span class="line">fun1()</span><br><span class="line">print(num)</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">123</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
+<p>如果要修改嵌套作用域（enclosing 作用域，外层非全局作用域）中的变量则需要 nonlocal 关键字了，如下实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">def outer():</span><br><span class="line">    num = 10</span><br><span class="line">    def inner():</span><br><span class="line">        nonlocal num   # nonlocal关键字声明</span><br><span class="line">        num = 100</span><br><span class="line">        print(num)</span><br><span class="line">    inner()</span><br><span class="line">    print(num)</span><br><span class="line">outer()</span><br></pre></td></tr></table></figure>
+<p>以上实例输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">100</span><br><span class="line">100</span><br></pre></td></tr></table></figure>
+<p>另外有一种特殊情况，假设下面这段代码被运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">a = 10</span><br><span class="line">def test():</span><br><span class="line">    a = a + 1</span><br><span class="line">    print(a)</span><br><span class="line">test()</span><br></pre></td></tr></table></figure></p>
+<p>以上程序执行，报错信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;test.py&quot;, line 7, in &lt;module&gt;</span><br><span class="line">    test()</span><br><span class="line">  File &quot;test.py&quot;, line 5, in test</span><br><span class="line">    a = a + 1</span><br><span class="line">UnboundLocalError: local variable &apos;a&apos; referenced before assignment</span><br></pre></td></tr></table></figure></p>
+<p>错误信息为局部作用域引用错误，因为 test 函数中的 a 使用的是局部，未定义，无法修改。</p>
+<p>修改 a 为全局变量，通过函数参数传递，可以正常执行输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python3</span><br><span class="line"> </span><br><span class="line">a = 10</span><br><span class="line">def test(a):</span><br><span class="line">    a = a + 1</span><br><span class="line">    print(a)</span><br><span class="line">test(a)</span><br></pre></td></tr></table></figure></p>
+<p>执行输出结果为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">11</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/25/JavaScript正则表达式/" rel="next" title="JavaScript正则表达式">
+                <i class="fa fa-chevron-left"></i> JavaScript正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">itmao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python3函数"><span class="nav-number">1.</span> <span class="nav-text">Python3函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个函数"><span class="nav-number">1.1.</span> <span class="nav-text">定义一个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例"><span class="nav-number">1.1.2.</span> <span class="nav-text">实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数调用"><span class="nav-number">1.2.</span> <span class="nav-text">函数调用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数传递"><span class="nav-number">1.3.</span> <span class="nav-text">函数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可更改-mutable-与不可更改-immutable-对象"><span class="nav-number">1.3.1.</span> <span class="nav-text">可更改(mutable)与不可更改(immutable)对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python-传不可变对象实例"><span class="nav-number">1.3.2.</span> <span class="nav-text">python 传不可变对象实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传可变对象实例"><span class="nav-number">1.3.3.</span> <span class="nav-text">传可变对象实例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">1.4.</span> <span class="nav-text">参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#必需参数"><span class="nav-number">1.4.1.</span> <span class="nav-text">必需参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字参数"><span class="nav-number">1.4.2.</span> <span class="nav-text">关键字参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认参数"><span class="nav-number">1.4.3.</span> <span class="nav-text">默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不定长参数"><span class="nav-number">1.4.4.</span> <span class="nav-text">不定长参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名函数"><span class="nav-number">1.5.</span> <span class="nav-text">匿名函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法-1"><span class="nav-number">1.5.1.</span> <span class="nav-text">语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return语句"><span class="nav-number">1.6.</span> <span class="nav-text">return语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量作用域"><span class="nav-number">1.7.</span> <span class="nav-text">变量作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局变量和局部变量"><span class="nav-number">1.7.1.</span> <span class="nav-text">全局变量和局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#global-和-nonlocal关键字"><span class="nav-number">1.7.2.</span> <span class="nav-text">global 和 nonlocal关键字</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">itmao</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v6.7.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=6.7.0"></script>
+
+  <script src="/js/src/motion.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+  
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=6.7.0"></script>
+
+
+
+  
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
